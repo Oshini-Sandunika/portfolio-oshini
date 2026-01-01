@@ -1,84 +1,730 @@
-<html>
-	<head>
-		<title>
-			FC213037
-		</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oshini Sandunika | Portfolio</title>
 
-		<style>
-			body{
-				height: 200vh; 
-			}
+  <!-- Modern font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
-			.header{	
-				position: fixed;
-				top: 0;
-				left: 0;
-				width: 100%;
-				background-color: black;
-				color: white;
-				padding: 10px;
-			}
-			.menu{
-				position: sticky;
-				top: 0px;
-				background-color: pink;
-				padding: 10px;
-			}
 
-		</style>
-	</head>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("Y5XL7B74-K3IIuVvg");
+    })();
+  </script>
+</head>
 
-	<body>
-		<!-- Header -->
-		<header>
-			<h1>Oshini Sandunika</h1>
-			<p>Undergraduate in Information Systems<p>
-		</header>
+<body>
+  <!-- Floating CV Download -->
+  <div class="cvFloat">
+    <a href="cv.pdf" download>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 3v10"></path>
+        <path d="M8 11l4 4 4-4"></path>
+        <path d="M4 17v3h16v-3"></path>
+      </svg>
+      Download CV
+    </a>
+  </div>
 
-		<!-- Navigation -->
-		<nav>
-			<a href="#about">About</a>
-			<a href="#skills">Skills</a>
-			<a href="#projects">Projects</a>
-			<a href="contact">Contact</a>
-		</nav>
+  <div class="topbar">
+    <div class="wrap">
+      <div class="top">
+        <div class="brand">
+          <span class="dot"></span>
+          <div>
+            <b>Oshini Sandunika</b>
+            <span>Undergraduate • Information Systems</span>
+          </div>
+        </div>
 
-		<!-- About -->
-		<section id="about">
-			<h2>About Me</h2>
-			<p>oivnsoinvsovnsovnsv</p>
+        <div class="nav">
+          <a href="#home" class="navlink">Home</a>
+          <a href="#about" class="navlink">About</a>
+          <a href="#skills" class="navlink">Skills</a>
+          <a href="#projects" class="navlink">Projects</a>
+          <a href="#contact" class="navlink">Contact</a>
+        </div>
+
+        <div class="actions">
+          <button class="btn burger" id="menuBtn" type="button">☰</button>
+          <a class="btn border navlink" href="#projects">Work</a>
+          <button class="btn primary" id="copyBtn" type="button">Copy Email</button>
+        </div>
+      </div>
+
+      <div class="mobile" id="mobileMenu">
+        <a href="#home" class="navlink">Home</a>
+        <a href="#about" class="navlink">About</a>
+        <a href="#skills" class="navlink">Skills</a>
+        <a href="#projects" class="navlink">Projects</a>
+        <a href="#contact" class="navlink">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="page" id="page">
+
+    <!-- HOME -->
+    <section id="home">
+		<div class="wrap panel reveal">
+			<div class="hero">
+			<!-- LEFT (no container box) -->
+			<div class="hero-left">
+				<h1 class="hero-title">
+				I build <span class="swap in" id="swapText">modern interfaces</span><br/>
+				with clarity and purpose.
+				</h1>
+
+				<p class="hero-sub">
+				Hi, I’m Oshini Sandunika, an Information Systems undergraduate passionate about
+building intuitive, well-structured digital solutions. I focus on clarity, smooth
+interactions, and creating systems that feel purposeful, reliable, and easy to use.
+
+				</p>
+
+				<div class="hero-actions">
+				<a class="btn primary navlink" href="#projects">View Projects</a>
+				<a class="btn border navlink" href="#contact">Contact Me</a>
+				</div>
+
+				
+			</div>
+
+			<!-- RIGHT -->
+			<div class="hero-right">
+        <div class="hexPop">
+          <div class="hexOuterGlow"></div>
+
+          <!-- HEX frame -->
+          <div class="hexFrame">
+            <div class="hexInnerGlow"></div>
+            <img class="hexImgIn" src="/images/picture.png" alt="Profile" />
+          </div>
+
+          <!-- POP layer-->
+          <img class="hexImgOut" src="/images/picture.png" alt="" aria-hidden="true" />
+        </div>
+      </div>
+
+
+
+
+			</div>
+		</div>
 		</section>
 
-		<!-- Skills -->
-		<section id="skills">
-			<h2>Skills</h2>
-			<ul>
-				<li>HUIHIU</li>
-				<li>hfiuh></li>
-				<li>idhuiwhf</li>
-			</ul>
-		</section>
 
-		<!-- Projects -->
-		<section id="projects">
-			<h2>Projects</h2>
-			<article>
-				<h3>Project Title</h3>
-				<p>rfhrhfurifh</p>
-			</article>
-		</section>
+    <!-- ABOUT -->
+<section id="about">
+  <div class="wrap panel reveal">
+    <h2>About Me</h2>
+    <p class="hint">A clean snapshot of who I am, what I build, and what I’m looking for.</p>
 
-		<!-- Contact -->
-		<section id="contact">
-			<h2>Contact</h2>
-			<p>Email: guwgwuedgwededwuyd</p>
-			<p>GitHub | LinkedIn | Website</p>
-		</section>
+    <div class="about-full">
+      <div class="block">
+        <p class="sub" style="margin:0;">
+          Hi, I’m <b>Oshini Sandunika</b> , an <b>Information Systems</b> undergraduate at the
+          <b>University of Sri Jayewardenepura</b>. I enjoy building user-friendly systems with
+          <b>clarity</b>, <b>structure</b>, and a modern feel across web, mobile, and software projects.
+        </p>
 
-		<!-- Footer -->
-		<footer>
-			<p> © 2025 Oshini</p>
-		</footer>
+        <div class="about-tags">
+          <span class="tag">System Thinking</span>
+          <span class="tag">Clean UI</span>
+          <span class="tag">Problem Solving</span>
+          <span class="tag">Team Collaboration</span>
+        </div>
+      </div>
 
-	</body>
-</html
+      <div class="about-cards">
+        <div class="miniCard">
+          <div class="miniTitle">Current</div>
+          <div class="miniText">Information Systems Undergraduate</div>
+          <div class="miniMeta">University of Sri Jayewardenepura</div>
+        </div>
+
+        <div class="miniCard">
+          <div class="miniTitle">Completed</div>
+          <div class="miniText">Higher Diploma in IT (SLIIT)</div>
+          <div class="miniMeta">Courses • projects • building real systems</div>
+        </div>
+
+        <div class="miniCard">
+          <div class="miniTitle">Focus</div>
+          <div class="miniText">Web • Mobile • Practical software</div>
+          <div class="miniMeta">Modern UI + structured development</div>
+        </div>
+
+        <div class="miniCard accent">
+          <div class="miniTitle">Looking For</div>
+          <div class="miniText">Internship / project opportunities</div>
+          <div class="miniMeta">Where I can learn fast and ship meaningful features</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="wrap panel reveal">
+        <h2>Skills</h2>
+        <p class="hint">A quick snapshot of the tools I use across web, mobile, and software projects.</p>
+
+        <div class="skills-grid">
+
+          <!-- 1) Languages -->
+          <div class="skill-block">
+            <h3>Programming Languages</h3>
+
+            <div class="skill">
+              <div class="skill-top"><span>Python</span><span>Strong</span></div>
+              <div class="bar"><div class="fill" data-fill="82"></div></div>
+            </div>
+
+            <div class="skill">
+              <div class="skill-top"><span>JavaScript</span><span>Good</span></div>
+              <div class="bar"><div class="fill" data-fill="75"></div></div>
+            </div>
+
+            <div class="skill">
+              <div class="skill-top"><span>Kotlin</span><span>Good</span></div>
+              <div class="bar"><div class="fill" data-fill="70"></div></div>
+            </div>
+
+            <div class="skill">
+              <div class="skill-top"><span>C#</span><span>Good</span></div>
+              <div class="bar"><div class="fill" data-fill="68"></div></div>
+            </div>
+
+            <div class="skill">
+              <div class="skill-top"><span>Java</span><span>Familiar</span></div>
+              <div class="bar"><div class="fill" data-fill="60"></div></div>
+            </div>
+
+            <div class="skill">
+              <div class="skill-top"><span>C / C++</span><span>Familiar</span></div>
+              <div class="bar"><div class="fill" data-fill="55"></div></div>
+            </div>
+          </div>
+
+          <!-- 2) Frontend -->
+          <div class="skill-block">
+            <h3>Frontend Development</h3>
+
+            <div class="skill">
+              <div class="skill-top"><span>HTML</span><span>Advanced</span></div>
+              <div class="bar"><div class="fill" data-fill="88"></div></div>
+            </div>
+
+            <div class="skill">
+              <div class="skill-top"><span>CSS</span><span>Strong</span></div>
+              <div class="bar"><div class="fill" data-fill="82"></div></div>
+            </div>
+
+            <div class="skill">
+              <div class="skill-top"><span>Responsive UI / Layout</span><span>Strong</span></div>
+              <div class="bar"><div class="fill" data-fill="80"></div></div>
+            </div>
+
+            <div class="skill">
+              <div class="skill-top"><span>React</span><span>Good</span></div>
+              <div class="bar"><div class="fill" data-fill="72"></div></div>
+            </div>
+
+            <div class="skill">
+              <div class="skill-top"><span>UI/UX (Clean Design)</span><span>Good</span></div>
+              <div class="bar"><div class="fill" data-fill="74"></div></div>
+            </div>
+          </div>
+
+          <!-- 3) Backend / Databases -->
+          <div class="skill-block">
+            <h3>Backend & Databases</h3>
+
+            <div class="skill">
+              <div class="skill-top"><span>Node.js</span><span>Good</span></div>
+              <div class="bar"><div class="fill" data-fill="70"></div></div>
+            </div>
+
+            <div class="skill">
+              <div class="skill-top"><span>Express.js / REST APIs</span><span>Good</span></div>
+              <div class="bar"><div class="fill" data-fill="68"></div></div>
+            </div>
+
+            <div class="skill">
+              <div class="skill-top"><span>MongoDB</span><span>Good</span></div>
+              <div class="bar"><div class="fill" data-fill="68"></div></div>
+            </div>
+
+            <div class="skill">
+              <div class="skill-top"><span>Authentication / CRUD</span><span>Good</span></div>
+              <div class="bar"><div class="fill" data-fill="70"></div></div>
+            </div>
+          </div>
+
+          <!-- 4) Mobile / Game / Data -->
+          <div class="skill-block">
+            <h3>Mobile, Game & Data</h3>
+
+            <div class="skill">
+              <div class="skill-top"><span>Android (Kotlin)</span><span>Good</span></div>
+              <div class="bar"><div class="fill" data-fill="70"></div></div>
+            </div>
+
+            <div class="skill">
+              <div class="skill-top"><span>Unity (2D) / Game Logic</span><span>Good</span></div>
+              <div class="bar"><div class="fill" data-fill="66"></div></div>
+            </div>
+
+            <div class="skill">
+              <div class="skill-top"><span>Streamlit Apps</span><span>Strong</span></div>
+              <div class="bar"><div class="fill" data-fill="80"></div></div>
+            </div>
+
+            <div class="skill">
+              <div class="skill-top"><span>ML Basics (scikit-learn)</span><span>Good</span></div>
+              <div class="bar"><div class="fill" data-fill="70"></div></div>
+            </div>
+
+            <div class="skill">
+              <div class="skill-top"><span>Data Handling (pandas)</span><span>Good</span></div>
+              <div class="bar"><div class="fill" data-fill="72"></div></div>
+            </div>
+          </div>
+
+          <!-- 5) Tools & Workflow -->
+          <div class="skill-block">
+            <h3>Tools & Workflow</h3>
+
+            <div class="skill">
+              <div class="skill-top"><span>Git / GitHub</span><span>Good</span></div>
+              <div class="bar"><div class="fill" data-fill="72"></div></div>
+            </div>
+
+            <div class="skill">
+              <div class="skill-top"><span>Team Collaboration (Git workflow)</span><span>Good</span></div>
+              <div class="bar"><div class="fill" data-fill="74"></div></div>
+            </div>
+
+            <div class="skill">
+              <div class="skill-top"><span>Problem Solving</span><span>Strong</span></div>
+              <div class="bar"><div class="fill" data-fill="80"></div></div>
+            </div>
+
+            <div class="skill">
+              <div class="skill-top"><span>Documentation / Clean Code</span><span>Good</span></div>
+              <div class="bar"><div class="fill" data-fill="72"></div></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="wrap panel reveal">
+        <h2>Projects</h2>
+        <p class="hint">Projects that reflect my skills, problem-solving, and growth.</p>
+
+        <div class="cards">
+
+          <div class="card" onclick="toggleCard(this)">
+            <img src="/images/spp.png" alt="Project thumbnail"/>
+            <div class="card-top">
+              <h3>Student Performance Predictor</h3>
+              <p>A Streamlit app that predicts student exam performance and gives study recommendations.</p>
+              <span class="chev">More details ▾</span>
+            </div>
+            <div class="details">
+              <div class="details-inner">
+                <b>Overview:</b> This project is a predictive web app built with Streamlit and Python that estimates expected student grades based on inputs like study hours, attendance, sleep, and GPA. It combines a trained machine-learning model with contextual advice and sentiment analysis to help students understand their study habits and receive tailored feedback.
+                <br/><br/>
+                <b>Status:</b> Completed
+                <br/>
+                <b>Tech:</b> Python · Streamlit · scikit-learn · pandas · plotly · VADER/TextBlob
+                <br/>
+                <b>Highlights:</b> Grade prediction using ML regression, Visual study habit radar charts, Rules-based personalized advice and sentiment feedback
+                <div class="mini-links">
+                  <a href="https://github.com/Oshini-Sandunika/StudentPerformancePredictor">Source Code</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" onclick="toggleCard(this)">
+            <img src="/images/pawfect.jpeg" alt="Project thumbnail"/>
+            <div class="card-top">
+              <h3>Pawfect</h3>
+              <p>A simple website built with HTML, CSS, and JavaScript.</p>
+              <span class="chev">More details ▾</span>
+            </div>
+            <div class="details">
+              <div class="details-inner">
+                <b>Overview:</b> Pawfect is a responsive frontend project implementing a basic multi-page structure with homepage, about, and contact pages. Its clean layout and structured folder system make it a strong showcase of core frontend skills.
+                <br/><br/>
+                <b>Status:</b> Ongoing
+                <br/>
+                <b>Role:</b> Contributor (Frontend development)
+                <br/>
+                <b>Tech:</b> HTML · CSS · JavaScript
+                <br/>
+                <b>Highlights:</b> Organized multi-page layout, Clean responsive design, Basic interactive elements (e.g., forms or navigation)
+                <div class="mini-links">
+                  <a href="https://github.com/Oshini-Sandunika/Pawfect">Source Code</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" onclick="toggleCard(this)">
+            <img src="https://private-user-images.githubusercontent.com/159011911/321572013-29158cd5-7f91-4b94-bff7-5a5ce60d634b.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjcyNTk0MDgsIm5iZiI6MTc2NzI1OTEwOCwicGF0aCI6Ii8xNTkwMTE5MTEvMzIxNTcyMDEzLTI5MTU4Y2Q1LTdmOTEtNGI5NC1iZmY3LTVhNWNlNjBkNjM0Yi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwMTAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDEwMVQwOTE4MjhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zOGQ4NDhkODM1ZmFiOTEyNjZiZGY5MTVlZGVhYTkxNzE5OTFkYTg5NmY5YjU2MmE2ZWQ4MjM2YzM3Nzc0NmI2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.oZRZmzU2-U55kZD9ROypsjci9I1fNK462yDJ1CTERNk" alt="Project thumbnail"/>
+            <div class="card-top">
+              <h3>AgroNest – Smart Agriculture Platform</h3>
+              <p>A team-based smart agriculture system connecting farmers with technology-driven solutions.</p>
+              <span class="chev">More details ▾</span>
+            </div>
+            <div class="details">
+              <div class="details-inner">
+                <b>Overview:</b> AgroNest is a collaborative smart agriculture platform designed to support farmers through digital tools and system automation. The project focuses on improving agricultural efficiency, information access, and management using modern software practices.
+                <br/><br/>
+                <b>Status:</b> Completed
+                <br/>
+                <b>Role:</b> Contributor (Frontend + Backend development)
+                <br/>
+                <b>Tech:</b> MERN Stack · Team-based development
+                <br/>
+                <b>Highlights:</b> Real-world problem focus, collaborative Git workflow, modular feature development.
+                <div class="mini-links">
+                  <a href="https://github.com/AgroNest/AgroNest_1.0">Source Code</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" onclick="toggleCard(this)">
+            <img src="/images/musichive.png" alt="Project thumbnail"/>
+            <div class="card-top">
+              <h3>MusicHive – Music Streaming Web Application</h3>
+              <p>A collaborative MERN-stack music streaming platform with modern UI and user features.</p>
+              <span class="chev">More details ▾</span>
+            </div>
+            <div class="details">
+              <div class="details-inner">
+                <b>Overview:</b> MusicHive is an ongoing team-based music streaming web application that focuses on delivering a modern, user-friendly interface for music discovery and playback.
+                <br/><br/>
+                <b>Status:</b> Ongoing 
+                <br/>
+                <b>Role:</b> Contributor (Frontend + Backend development)
+                <br/>
+                <b>Tech:</b> MERN Stack · GitHub collaboration
+                <br/>
+                <b>Highlights:</b> Modern UI design, team collaboration, scalable web application structure.
+                <div class="mini-links">
+                  <a href="https://github.com/Rivindu13/MusicHive">Source Code</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" onclick="toggleCard(this)">
+            <img src="/images/crossrush.jpeg" alt="Project thumbnail"/>
+            <div class="card-top">
+              <h3>CrossRush</h3>
+              <p>2D arcade-style game where the player safely navigates a character across obstacles.</p>
+              <span class="chev">More details ▾</span>
+            </div>
+            <div class="details">
+              <div class="details-inner">
+                <b>Overview:</b> CrossRush is a Unity game inspired by classic arcade gameplay. The player must dodge obstacles while progressing through increasingly challenging levels. Designed and developed using C# in Unity, this project demonstrates interactive game mechanics, character control, and collision handling.
+                <br/><br/>
+                <b>Status:</b> Ongoing 
+                <br/>
+                <b>Tech:</b> Unity · C# · Game Design
+                <br/>
+                <b>Highlights:</b> Player movement & collision systems, Traffic obstacle spawning, Arcade arcade-style scoring and challenge progression
+                <div class="mini-links">
+                  <a href="https://github.com/Oshini-Sandunika/CrossRush">Source Code</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" onclick="toggleCard(this)">
+            <img src="/images/mynotes.jpeg" alt="Project thumbnail"/>
+            <div class="card-top">
+              <h3>MyNotes – Personal Notes Application</h3>
+              <p>A simple mobile application for creating, editing, and managing personal notes.</p>
+              <span class="chev">More details ▾</span>
+            </div>
+            <div class="details">
+              <div class="details-inner">
+                <b>Overview:</b> MyNotes is a personal notes management application designed to help users create, edit, and organize notes efficiently. The project focuses on simplicity, usability, and clean UI structure.
+                <br/><br/>
+                <b>Status:</b> Completed
+                <br/>
+                <b>Tech:</b> Kotlin · Mobile Application Development
+                <br/>
+                <b>Highlights:</b> CRUD-style note handling, clean UI layout, beginner-friendly project structure.
+                <div class="mini-links">
+                  <a href="https://github.com/Oshini-Sandunika/MyNotes">Source Code</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="wrap panel reveal">
+        <h2>Contact</h2>
+        <p class="hint">Let’s connect — I’m always open to new opportunities.</p>
+
+        <div class="block">
+          <p class="sub" style="margin:0 0 12px;">
+            Email: <b id="myEmail">oshinisandunika416@gmail.com</b><br/>
+            Location: Sri Lanka<br/>
+          </p>
+
+          <div class="row">
+            <input type="text" id="name" placeholder="Your name" />
+            <input type="email" id="email" placeholder="Your email" />
+          </div>
+          <div style="height:10px;"></div>
+          <textarea id="msg" placeholder="Write your message..."></textarea>
+          <div style="height:10px;"></div>
+
+          <button class="btn primary" id="sendBtn" type="button">Send</button>
+          <p class="note" id="formMsg"></p>
+        </div>
+      </div>
+    </section>
+
+	<!-- Footer -->
+    <section id="footer">
+        <footer class="wrap">
+          <div class="footer-grid">
+            <div>
+              <p class="foot-title">Oshini Sandunika</p>
+              <p class="foot-text">
+                Undergraduate in Information Systems.<br/>
+                Building clean, responsive, modern web experiences.
+              </p>
+
+              <div class="social">
+                <a class="iconBtn" href="https://github.com/Oshini-Sandunika" aria-label="GitHub">
+                  <svg viewBox="0 0 24 24"><path d="M9 19c-4 1.5-4-2.5-5-3m10 5v-3.5c0-1 .1-1.4-.5-2 2 0 3.5-.5 4.5-1.5 1-1 1-2.5.5-4-.2-.6-.2-1.6.1-2.5 0 0-1 0-2.5 1-.7-.2-1.6-.5-2.6-.5s-1.9.3-2.6.5c-1.5-1-2.5-1-2.5-1 .3.9.3 1.9.1 2.5-.5 1.5-.5 3 .5 4 1 1 2.5 1.5 4.5 1.5-.6.6-.5 1.2-.5 2V21"></path></svg>
+                </a>
+                <a class="iconBtn" href="https://www.linkedin.com/in/oshini-sandunika-3736bb276?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" aria-label="LinkedIn">
+                  <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V9h4v2"></path><path d="M2 9h4v12H2z"></path><path d="M4 4a2 2 0 1 0 0 .01"></path></svg>
+                </a>
+                <a class="iconBtn" href="mailto:oshinisandunika416@gmail.com" aria-label="Email">
+                  <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"></path><path d="M22 6l-10 7L2 6"></path></svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="foot-links">
+              <p class="foot-title">Quick Navigation</p>
+              <a class="navlink" href="#home">Home</a>
+              <a class="navlink" href="#about">About</a>
+              <a class="navlink" href="#skills">Skills</a>
+              <a class="navlink" href="#projects">Projects</a>
+              <a class="navlink" href="#contact">Contact</a>
+            </div>
+
+            <div>
+              <p class="foot-title">Details</p>
+              <p class="foot-text">
+                Email: <b>oshinisandunika416@gmail.com</b><br/>
+                © 2025 • All rights reserved
+              </p>
+            </div>
+          </div>
+        </footer>
+    </section>
+  </div>
+
+  <script>
+    var page = document.getElementById("page");
+    var navlinks = document.getElementsByClassName("navlink");
+
+    function scrollToSection(hash){
+      var id = hash.replace("#", "");
+      var el = document.getElementById(id);
+      if(!el) return;
+
+      var topbarH = 74;
+      page.scrollTo({ top: el.offsetTop - topbarH, behavior: "smooth" });
+    }
+
+
+    for(var i=0; i<navlinks.length; i++){
+      navlinks[i].onclick = function(e){
+        var href = this.getAttribute("href");
+        if(href && href.charAt(0) === "#"){
+          e.preventDefault();
+          scrollToSection(href);
+          var mob = document.getElementById("mobileMenu");
+          if(mob) mob.style.display = "none";
+        }
+      };
+    }
+
+    // Mobile menu
+    var menuBtn = document.getElementById("menuBtn");
+    var mobileMenu = document.getElementById("mobileMenu");
+    if(menuBtn){
+      menuBtn.onclick = function(){
+        mobileMenu.style.display = (mobileMenu.style.display === "block") ? "none" : "block";
+      };
+    }
+
+    // Smooth text swap
+    var swap = document.getElementById("swapText");
+    var words = ["clean websites", "modern interfaces", "responsive layouts", "user-friendly systems"];
+    var idx = 0;
+
+    setInterval(function(){
+      swap.classList.remove("in");
+      swap.classList.add("out");
+      setTimeout(function(){
+        idx = (idx + 1) % words.length;
+        swap.textContent = words[idx];
+        swap.classList.remove("out");
+        swap.classList.add("in");
+      }, 430);
+    }, 2600);
+
+    // Copy email
+    var copyBtn = document.getElementById("copyBtn");
+    var myEmail = document.getElementById("myEmail");
+    var copyMsg = document.getElementById("copyMsg");
+
+    if(copyBtn){
+      copyBtn.onclick = function(){
+        var email = myEmail.innerText;
+        if(navigator.clipboard){
+          navigator.clipboard.writeText(email).then(function(){
+            copyMsg.textContent = "Copied: " + email;
+          }).catch(function(){
+            copyMsg.textContent = "Copy failed. Copy manually: " + email;
+          });
+        }else{
+          copyMsg.textContent = "Clipboard not supported. Copy manually: " + email;
+        }
+      };
+    }
+
+
+    var sendBtn = document.getElementById("sendBtn");
+    var formMsg = document.getElementById("formMsg");
+
+    if(sendBtn){
+      sendBtn.onclick = function(){
+        var n = document.getElementById("name").value.trim();
+        var e = document.getElementById("email").value.trim();
+        var m = document.getElementById("msg").value.trim();
+
+        if(n === "" || e === "" || m === ""){
+          formMsg.textContent = "Please fill all fields 🙂";
+          return;
+        }
+        formMsg.textContent = "Thanks, " + n + "! Message ready (demo).";
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("msg").value = "";
+      };
+    }
+
+
+    var panels = document.getElementsByClassName("reveal");
+    var barsStarted = false;
+
+    function runSkills(){
+      if(barsStarted) return;
+      var skills = document.getElementById("skills").getBoundingClientRect();
+      if(skills.top < window.innerHeight * 0.82){
+        barsStarted = true;
+        var fills = document.getElementsByClassName("fill");
+        for(var i=0; i<fills.length; i++){
+          var v = fills[i].getAttribute("data-fill");
+          fills[i].style.width = v + "%";
+        }
+      }
+    }
+
+    function reveal(){
+      for(var i=0; i<panels.length; i++){
+        var r = panels[i].getBoundingClientRect();
+        if(r.top < window.innerHeight - 90){
+          panels[i].classList.add("show");
+        }
+      }
+      runSkills();
+    }
+
+    reveal();
+    page.addEventListener("scroll", reveal);
+
+    // Project card expand (only one open at a time)
+    function toggleCard(card){
+      var cards = document.getElementsByClassName("card");
+      for(var i=0; i<cards.length; i++){
+        if(cards[i] !== card) cards[i].classList.remove("open");
+      }
+      card.classList.toggle("open");
+    }
+    window.toggleCard = toggleCard;
+
+    // If URL has #hash
+    if(location.hash){
+      setTimeout(function(){ scrollToSection(location.hash); }, 200);
+    }
+
+
+    var sendBtn = document.getElementById("sendBtn");
+  var formMsg = document.getElementById("formMsg");
+
+  if(sendBtn){
+    sendBtn.onclick = function(){
+      var name = document.getElementById("name").value.trim();
+      var email = document.getElementById("email").value.trim();
+      var msg = document.getElementById("msg").value.trim();
+
+      if(name === "" || email === "" || msg === ""){
+        formMsg.textContent = "Please fill all fields 🙂";
+        return;
+      }
+
+      emailjs.send("service_r046ghk", "template_ghxag92", {
+        from_name: name,
+        from_email: email,
+        message: msg
+      }).then(function(){
+        formMsg.textContent = "Thank you for contacting!";
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("msg").value = "";
+      }, function(){
+        formMsg.textContent = "Failed to send message ❌";
+      });
+    };
+  }
+  </script>
+</body>
+</html>
