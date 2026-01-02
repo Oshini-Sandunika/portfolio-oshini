@@ -90,42 +90,6 @@ a{ color: inherit; text-decoration: none; }
 }
 .mobile a:hover{ background: rgba(255,255,255,0.05); color: var(--text); }
 
-/* ===== Topbar: mobile fit fix ===== */
-@media (max-width: 720px){
-  .top{
-    flex-wrap: nowrap;
-    gap: 8px;
-  }
-
-  .brand{ 
-    min-width: 0; 
-    flex: 1;
-  }
-
-  .brand b{
-    font-size: 13px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 160px; /* adjust if needed */
-  }
-
-  .brand span{ 
-    display: none;  /* hides the "Undergraduate • ..." line on small screens */
-  }
-
-  .actions{
-    min-width: 0;
-    flex: 0 0 auto;
-    gap: 8px;
-  }
-
-  /* optional: hide extra buttons on very small width */
-  .actions .btn.border{ display: none; }   /* hides "Work" on mobile */
-  /* keep burger + copy button visible */
-}
-
-
 
 
 /* ============ Buttons (animated hover) ============ */
@@ -211,7 +175,7 @@ a{ color: inherit; text-decoration: none; }
 
 /* ============ One section per screen ============ */
 .page{
-  height: 100dvh;
+  height: 100vh;
   box-sizing: border-box;
   overflow-y: auto;
   overflow-x: hidden;
@@ -220,7 +184,6 @@ a{ color: inherit; text-decoration: none; }
   box-sizing: border-box; 
   scroll-snap-type: y mandatory;
 }
-
 section{
     min-height: 100vh;
     display: flex;
@@ -462,23 +425,6 @@ h2{
   transform-origin: 50% 50%;
   transform: translate3d(var(--outNudgeX), calc(var(--imgY) + var(--popY) + var(--outNudgeY)), 0)
              scale(var(--imgScale));
-}
-
-
-/* ===== Prevent hex from overflowing on mobile ===== */
-@media (max-width: 720px){
-  .hexPop{
-    --hexSize: 240px;
-    --imgScale: 1.25;
-  }
-}
-
-@media (max-width: 420px){
-  .hexPop{
-    --hexSize: 210px;
-    --imgScale: 1.18;
-    --popY: -25px;
-  }
 }
 
 
@@ -1100,6 +1046,110 @@ footer{
 @media (min-width: 721px){
   .mobile{ display: none !important; }
 }
+
+/* ================================
+   MOBILE FIXES (Topbar + Home Hero)
+   ================================ */
+@media (max-width: 720px){
+
+  /* ---------- TOPBAR: only brand + burger ---------- */
+  .nav{ display: none !important; } /* keep your existing behavior */
+
+  /* remove min-widths that force overflow */
+  .brand{ min-width: 0 !important; flex: 1 1 auto; }
+  .actions{ min-width: 0 !important; flex: 0 0 auto; justify-content: flex-end; }
+
+  /* hide Work + Copy Email */
+  .actions a.btn.border,
+  .actions button#copyBtn{
+    display: none !important;
+  }
+
+  /* show only burger on the right */
+  .btn.burger{
+    display: inline-flex !important;
+    width: 44px;
+  }
+
+  /* keep brand text visible (name + subtitle) */
+  .brand b{
+    font-size: 13px;
+    line-height: 1.1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+  .brand span{
+    display: block !important;   /* show Undergraduate • IS */
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 220px;
+  }
+
+  /* ---------- HOME: stack + fit + keep image centered ---------- */
+  .hero{
+    grid-template-columns: 1fr !important;
+    gap: 18px;
+    margin-top: 10px;
+  }
+
+  .hero-left{
+    padding: 0 !important;
+  }
+
+  .hero-title{
+    font-size: 38px !important;
+    line-height: 1.1 !important;
+    margin: 10px 0 10px !important;
+  }
+
+  .hero-sub{
+    font-size: 14px !important;
+    line-height: 1.9 !important;
+    max-width: 100% !important;
+  }
+
+  .hero-actions{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 12px;
+    padding-bottom: 0;
+  }
+
+  /* center the whole right area */
+  .hero-right{
+    padding: 10px 0 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* keep hex centered + scale down WITHOUT breaking pop alignment */
+  .hexPop{
+    margin: 0 auto !important;
+    --hexSize: 240px;    /* safe size for 360/375px screens */
+    --imgScale: 1.35;    /* keep your look */
+    --popY: -35px;       /* keep pop-out */
+    --outNudgeX: -1px;
+    --outNudgeY: 35px;
+  }
+}
+
+/* Extra-small phones */
+@media (max-width: 420px){
+  .hero-title{ font-size: 34px !important; }
+
+  .hexPop{
+    --hexSize: 215px;
+    --imgScale: 1.30;
+    --popY: -30px;
+  }
+}
+
 
 
 
