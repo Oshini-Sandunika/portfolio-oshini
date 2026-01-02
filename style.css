@@ -959,3 +959,9 @@ footer{
   font-size:12px;
   color:var(--muted);
 }
+
+footer.wrap{
+  padding-left: 22px !important;
+  padding-right: 22px !important;
+}
+
