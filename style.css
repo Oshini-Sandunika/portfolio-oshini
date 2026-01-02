@@ -90,6 +90,42 @@ a{ color: inherit; text-decoration: none; }
 }
 .mobile a:hover{ background: rgba(255,255,255,0.05); color: var(--text); }
 
+/* ===== Topbar: mobile fit fix ===== */
+@media (max-width: 720px){
+  .top{
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+
+  .brand{ 
+    min-width: 0; 
+    flex: 1;
+  }
+
+  .brand b{
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 160px; /* adjust if needed */
+  }
+
+  .brand span{ 
+    display: none;  /* hides the "Undergraduate • ..." line on small screens */
+  }
+
+  .actions{
+    min-width: 0;
+    flex: 0 0 auto;
+    gap: 8px;
+  }
+
+  /* optional: hide extra buttons on very small width */
+  .actions .btn.border{ display: none; }   /* hides "Work" on mobile */
+  /* keep burger + copy button visible */
+}
+
+
 
 
 /* ============ Buttons (animated hover) ============ */
@@ -425,6 +461,23 @@ h2{
   transform-origin: 50% 50%;
   transform: translate3d(var(--outNudgeX), calc(var(--imgY) + var(--popY) + var(--outNudgeY)), 0)
              scale(var(--imgScale));
+}
+
+
+/* ===== Prevent hex from overflowing on mobile ===== */
+@media (max-width: 720px){
+  .hexPop{
+    --hexSize: 240px;
+    --imgScale: 1.25;
+  }
+}
+
+@media (max-width: 420px){
+  .hexPop{
+    --hexSize: 210px;
+    --imgScale: 1.18;
+    --popY: -25px;
+  }
 }
 
 
