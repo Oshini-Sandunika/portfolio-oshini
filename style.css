@@ -211,7 +211,7 @@ a{ color: inherit; text-decoration: none; }
 
 /* ============ One section per screen ============ */
 .page{
-  height: 100vh;
+  height: 100dvh;
   box-sizing: border-box;
   overflow-y: auto;
   overflow-x: hidden;
@@ -220,6 +220,7 @@ a{ color: inherit; text-decoration: none; }
   box-sizing: border-box; 
   scroll-snap-type: y mandatory;
 }
+
 section{
     min-height: 100vh;
     display: flex;
