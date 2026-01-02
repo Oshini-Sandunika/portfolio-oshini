@@ -21,6 +21,38 @@
 </head>
 
 <body>
+  <div id="loader" class="loader" aria-label="Loading">
+    <div class="loaderCard">
+      <div class="ring" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <svg class="ringSvg" viewBox="0 0 120 120">
+          <defs>
+            <linearGradient id="gradRing" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#7c3aed"/>
+              <stop offset="50%" stop-color="#a855f7"/>
+              <stop offset="100%" stop-color="#ec4899"/>
+            </linearGradient>
+          </defs>
+
+          <!-- track -->
+          <circle class="ringTrack" cx="60" cy="60" r="46"></circle>
+          <!-- progress -->
+          <circle class="ringProg" cx="60" cy="60" r="46"></circle>
+        </svg>
+
+        <div class="ringText">
+          <div class="ringPct" id="ringPct">0%</div>
+          <div class="ringSub">Loading…</div>
+        </div>
+      </div>
+
+      <div class="loaderMeta">
+        <div class="loaderTitle">Oshini Sandunika</div>
+        <div class="loaderHint">Building your portfolio experience</div>
+      </div>
+    </div>
+  </div>
+
+
   <!-- Floating CV Download -->
   <div class="cvFloat">
     <a href="cv.pdf" download>
@@ -774,6 +806,55 @@ interactions, and creating systems that feel purposeful, reliable, and easy to u
       applyFilter(this.getAttribute("data-filter"));
     });
   });
+
+  (function(){
+  const loader = document.getElementById("loader");
+  if(!loader) return;
+
+  const pctEl = document.getElementById("ringPct");
+  const prog = loader.querySelector(".ringProg");
+  const ring = loader.querySelector(".ring");
+  const circumference = 289;
+
+  let current = 0;
+  const target = 92;
+  const minShowTime = 650; // 👈 minimum visible time (ms)
+  const startTime = Date.now();
+
+  const timer = setInterval(() => {
+    current += (current < 70) ? 3 : 1;
+    if(current > target) current = target;
+
+    pctEl.textContent = current + "%";
+    prog.style.strokeDashoffset =
+      circumference * (1 - current / 100);
+
+    ring.setAttribute("aria-valuenow", current);
+  }, 60);
+
+  window.addEventListener("load", () => {
+    const elapsed = Date.now() - startTime;
+    const remaining = Math.max(0, minShowTime - elapsed);
+
+    setTimeout(() => {
+      clearInterval(timer);
+
+      // finish to 100%
+      pctEl.textContent = "100%";
+      prog.style.strokeDashoffset = "0";
+      ring.setAttribute("aria-valuenow", "100");
+
+      setTimeout(() => {
+        loader.classList.add("hide");
+        setTimeout(() => loader.remove(), 420);
+      }, 200);
+
+    }, remaining);
+  });
+})();
+
+
+  
 
 
   </script>
