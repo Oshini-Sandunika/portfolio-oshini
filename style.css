@@ -660,6 +660,8 @@ footer{
 
   footer.wrap{
     padding-bottom:24px;
+    padding-left: 22px;
+    padding-right: 22px;
   }
 }
 
@@ -724,7 +726,7 @@ footer{
 }
 #footer footer{
   margin-top:0;
-  padding:0;
+  padding:0 22px;
   border-top:none;
 }
 
