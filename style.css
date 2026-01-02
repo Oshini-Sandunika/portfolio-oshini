@@ -568,6 +568,8 @@ h2{
 
 .chev{ color:var(--muted); font-size:12px; user-select:none; }
 
+
+
 /* ============ Contact ============ */
 input, textarea{
   width:100%;
@@ -849,4 +851,34 @@ footer{
 @media (max-width: 420px){
   .hero-title{ font-size:34px; }
   .hexPop{ --hexSize:215px; }
+}
+
+.projFilters{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 14px 0 18px;
+}
+
+.fbtn{
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.03);
+  color: var(--muted);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.18s;
+}
+
+.fbtn:hover{
+  color: var(--text);
+  border-color: rgba(168,85,247,0.45);
+}
+
+.fbtn.active{
+  color: var(--text);
+  background: linear-gradient(135deg, rgba(124,58,237,0.35), rgba(168,85,247,0.25));
+  border-color: rgba(168,85,247,0.55);
 }

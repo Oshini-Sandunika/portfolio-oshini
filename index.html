@@ -338,10 +338,16 @@ interactions, and creating systems that feel purposeful, reliable, and easy to u
       <div class="wrap panel reveal">
         <h2>Projects</h2>
         <p class="hint">Projects that reflect my skills, problem-solving, and growth.</p>
+        <div class="projFilters">
+          <button class="fbtn active" data-filter="all" type="button">All</button>
+          <button class="fbtn" data-filter="completed" type="button">Completed</button>
+          <button class="fbtn" data-filter="ongoing" type="button">Ongoing</button>
+        </div>
+
 
         <div class="cards">
 
-          <div class="card" onclick="toggleCard(this)">
+          <div class="card" data-status="completed" onclick="toggleCard(this)">
             <img src="images/spp.png" alt="Project thumbnail"/>
             <div class="card-top">
               <h3>Student Performance Predictor</h3>
@@ -364,7 +370,7 @@ interactions, and creating systems that feel purposeful, reliable, and easy to u
             </div>
           </div>
 
-          <div class="card" onclick="toggleCard(this)">
+          <div class="card" data-status="ongoing" onclick="toggleCard(this)">
             <img src="images/pawfect.jpeg" alt="Project thumbnail"/>
             <div class="card-top">
               <h3>Pawfect</h3>
@@ -389,7 +395,7 @@ interactions, and creating systems that feel purposeful, reliable, and easy to u
             </div>
           </div>
 
-          <div class="card" onclick="toggleCard(this)">
+          <div class="card" data-status="completed" onclick="toggleCard(this)">
             <img src="images/agronest.png" alt="Project thumbnail"/>
             <div class="card-top">
               <h3>AgroNest – Smart Agriculture Platform</h3>
@@ -414,7 +420,7 @@ interactions, and creating systems that feel purposeful, reliable, and easy to u
             </div>
           </div>
 
-          <div class="card" onclick="toggleCard(this)">
+          <div class="card" data-status="ongoing" onclick="toggleCard(this)">
             <img src="images/musichive.png" alt="Project thumbnail"/>
             <div class="card-top">
               <h3>MusicHive – Music Streaming Web Application</h3>
@@ -439,7 +445,7 @@ interactions, and creating systems that feel purposeful, reliable, and easy to u
             </div>
           </div>
 
-          <div class="card" onclick="toggleCard(this)">
+          <div class="card" data-status="ongoing" onclick="toggleCard(this)">
             <img src="images/crossrush.jpeg" alt="Project thumbnail"/>
             <div class="card-top">
               <h3>CrossRush</h3>
@@ -462,7 +468,7 @@ interactions, and creating systems that feel purposeful, reliable, and easy to u
             </div>
           </div>
 
-          <div class="card" onclick="toggleCard(this)">
+          <div class="card" data-status="completed" onclick="toggleCard(this)">
             <img src="images/mynotes.jpeg" alt="Project thumbnail"/>
             <div class="card-top">
               <h3>MyNotes – Personal Notes Application</h3>
@@ -484,6 +490,45 @@ interactions, and creating systems that feel purposeful, reliable, and easy to u
               </div>
             </div>
           </div>
+
+          <div class="card" data-status="completed" onclick="toggleCard(this)">
+            <img src="images/resiliaid.png" alt="Project thumbnail"/>
+            <div class="card-top">
+              <h3>ResiliAid – Disaster Mental Health Support Platform</h3>
+              <p>
+                An AI-powered mental health support system to cope with disaster-related stress, trauma, and anxiety.
+              </p>
+              <span class="chev">More details ▾</span>
+            </div>
+
+            <div class="details">
+              <div class="details-inner">
+                <b>Overview:</b>
+                ResiliAid is an intelligent mental health support platform built to assist
+                individuals affected by natural disasters.
+                The system combines AI-driven emotion analysis, offline-first support,
+                and location-based alerts to provide fast, accessible, and compassionate
+                psychological assistance for vulnerable groups including children,
+                elders, and high-risk individuals.
+                <br/><br/>
+
+                <b>Status:</b> Completed
+                <br/>
+                <b>Tech:</b>
+                Google AI Studio – Vibe Coded · NLP & Voice Emotion Analysis ·
+                Mobile & Web App · Offline-First Design
+                <br/>
+                <b>Highlights:</b> AI Mood & Crisis Detector, Kid-Friendly Support Zone, Elder Support Mode, Community Peer-Support Rooms, 
+                Location-Based Wellness Alerts, Daily Check-Ins, Psychologist Dashboard
+                <div class="mini-links">
+                  <a href="https://github.com/Oshini-Sandunika/ResiliAid" target="_blank">
+                    Source Code
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -703,6 +748,34 @@ interactions, and creating systems that feel purposeful, reliable, and easy to u
       });
     };
   }
+
+  // Project Filters
+  var filterBtns = document.querySelectorAll(".projFilters .fbtn");
+  var projectCards = document.querySelectorAll("#projects .card");
+
+  function applyFilter(filter){
+    // close any open cards when switching filter
+    projectCards.forEach(function(card){
+      card.classList.remove("open");
+      var status = (card.getAttribute("data-status") || "").toLowerCase();
+
+      if(filter === "all" || status === filter){
+        card.style.display = "";
+      }else{
+        card.style.display = "none";
+      }
+    });
+  }
+
+  filterBtns.forEach(function(btn){
+    btn.addEventListener("click", function(){
+      filterBtns.forEach(function(b){ b.classList.remove("active"); });
+      this.classList.add("active");
+      applyFilter(this.getAttribute("data-filter"));
+    });
+  });
+
+
   </script>
 </body>
 </html>
