@@ -1,3 +1,4 @@
+<!-- index.html (FULL UPDATED) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,12 +11,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Oshini Sandunika | Portfolio</title>
 
-  <!-- Modern font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
 
+  <link rel="stylesheet" href="style.css">
 
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
@@ -38,9 +38,7 @@
             </linearGradient>
           </defs>
 
-          <!-- track -->
           <circle class="ringTrack" cx="60" cy="60" r="46"></circle>
-          <!-- progress -->
           <circle class="ringProg" cx="60" cy="60" r="46"></circle>
         </svg>
 
@@ -57,10 +55,9 @@
     </div>
   </div>
 
-
   <!-- Floating CV Download -->
   <div class="cvFloat">
-    <a href="cv.pdf" download>
+    <a href="CV.pdf" download>
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M12 3v10"></path>
         <path d="M8 11l4 4 4-4"></path>
@@ -84,6 +81,7 @@
         <div class="nav">
           <a href="#home" class="navlink">Home</a>
           <a href="#about" class="navlink">About</a>
+          <a href="#education" class="navlink">Education</a>
           <a href="#skills" class="navlink">Skills</a>
           <a href="#projects" class="navlink">Projects</a>
           <a href="#contact" class="navlink">Contact</a>
@@ -91,7 +89,10 @@
 
         <div class="actions">
           <button class="btn burger" id="menuBtn" type="button">☰</button>
-          <a class="btn border navlink" href="#projects">Work</a>
+
+          <!-- CHANGED: Work -> Blog -->
+          <a class="btn border navlink" href="#blog">Blog</a>
+
           <button class="btn primary" id="copyBtn" type="button">Copy Email</button>
         </div>
       </div>
@@ -99,10 +100,14 @@
       <div class="mobile" id="mobileMenu">
         <a href="#home" class="navlink">Home</a>
         <a href="#about" class="navlink">About</a>
+        <a href="#education" class="navlink">Education</a>
         <a href="#skills" class="navlink">Skills</a>
         <a href="#projects" class="navlink">Projects</a>
+        <a href="#blog" class="navlink">Blog</a>
         <a href="#contact" class="navlink">Contact</a>
       </div>
+
+      <div class="copyToast" id="copyMsg" aria-live="polite"></div>
     </div>
   </div>
 
@@ -110,47 +115,40 @@
 
     <!-- HOME -->
     <section id="home">
-		<div class="wrap panel reveal">
-			<div class="hero">
-      <!-- left -->
-			<div class="hero-left">
-				<h1 class="hero-title">
-				I build <span class="swap in" id="swapText">modern interfaces</span><br/>
-				with clarity and purpose.
-				</h1>
+      <div class="wrap panel reveal">
+        <div class="hero">
+          <div class="hero-left">
+            <h1 class="hero-title">
+              I build <span class="swap in" id="swapText">modern interfaces</span><br/>
+              with clarity and purpose.
+            </h1>
 
-				<p class="hero-sub">
-				Hi, I’m Oshini Sandunika, an Information Systems undergraduate passionate about building intuitive, 
-        well-structured digital solutions. I focus on clarity, smooth interactions, and creating systems that feel purposeful, reliable, and easy to use.
-				</p>
+            <p class="hero-sub">
+              Hi, I’m Oshini Sandunika, an Information Systems undergraduate passionate about building intuitive,
+              well-structured digital solutions. I focus on clarity, smooth interactions, and creating systems that feel purposeful, reliable, and easy to use.
+            </p>
 
-				<div class="hero-actions">
-				<a class="btn primary navlink" href="#projects">View Projects</a>
-				<a class="btn border navlink" href="#contact">Contact Me</a>
-				</div>		
-			</div>
-
-			<!-- Right -->
-			<div class="hero-right">
-        <div class="hexPop">
-          <div class="hexOuterGlow"></div>
-
-          <!-- HEX frame -->
-          <div class="hexFrame">
-            <div class="hexInnerGlow"></div>
-            <img class="hexImgIn" src="images/picture.png" alt="Profile" />
+            <div class="hero-actions">
+              <a class="btn primary navlink" href="#projects">View Projects</a>
+              <a class="btn border navlink" href="#contact">Contact Me</a>
+            </div>
           </div>
 
-          <!-- POP layer-->
-          <img class="hexImgOut" src="images/picture.png" alt="" aria-hidden="true" />
+          <div class="hero-right">
+            <div class="hexPop">
+              <div class="hexOuterGlow"></div>
+
+              <div class="hexFrame">
+                <div class="hexInnerGlow"></div>
+                <img class="hexImgIn" src="images/picture.png" alt="Profile" />
+              </div>
+
+              <img class="hexImgOut" src="images/picture.png" alt="" aria-hidden="true" />
+            </div>
+          </div>
         </div>
       </div>
-			</div>
-		</div>
-		</section>
-
-
-
+    </section>
 
     <!-- ABOUT -->
     <section id="about">
@@ -161,7 +159,7 @@
         <div class="about-full">
           <div class="block">
             <p class="sub" style="margin:0;">
-              Hi, I’m <b>Oshini Sandunika</b> , an <b>Information Systems</b> undergraduate at the
+              Hi, I’m <b>Oshini Sandunika</b>, an <b>Information Systems</b> undergraduate at the
               <b>University of Sri Jayewardenepura</b>. I enjoy building user-friendly systems with
               <b>clarity</b>, <b>structure</b>, and a modern feel across web, mobile, and software projects.
             </p>
@@ -203,17 +201,71 @@
       </div>
     </section>
 
+    <!-- EDUCATION-->
+    <section id="education">
+      <div class="wrap panel reveal">
+        <h2>Education</h2>
+        <p class="hint">My academic background and key achievements.</p>
 
+        <div class="edu-grid">
+          <div class="eduCard accent">
+            <div class="eduTop">
+              <div>
+                <div class="eduTitle">BSc (Reading) — Information Systems</div>
+                <div class="eduMeta">University of Sri Jayewardenepura • Current</div>
+              </div>
+              <span class="pill">Current</span>
+            </div>
+            <p class="eduText">
+              Currently pursuing an undergraduate degree focused on systems thinking, software development, and building practical digital solutions.
+            </p>
+          </div>
 
+          <div class="eduCard">
+            <div class="eduTop">
+              <div>
+                <div class="eduTitle">Higher Diploma in IT</div>
+                <div class="eduMeta">Sri Lanka Institute of Information Technology (SLIIT) • Completed</div>
+              </div>
+              <span class="pill good">Completed</span>
+            </div>
+
+            <p class="eduText">
+              Completed Higher Diploma in IT with strong academic performance and hands-on projects.
+            </p>
+
+            <div class="eduHighlight">
+              <b>Achievement:</b> Dean’s List — SLIIT Faculty of Computing
+            </div>
+          </div>
+
+          <div class="eduCard">
+            <div class="eduTop">
+              <div>
+                <div class="eduTitle">G.C.E. Advanced Level — Physical Science Stream</div>
+                <div class="eduMeta">Sri Lanka • Results</div>
+              </div>
+              <span class="pill purple">A/L</span>
+            </div>
+
+            <div class="eduTable">
+              <div class="eduRow"><span>Physics</span><b>C</b></div>
+              <div class="eduRow"><span>Chemistry</span><b>C</b></div>
+              <div class="eduRow"><span>Combined Mathematics</span><b>C</b></div>
+              <div class="eduRow"><span>Z-Score</span><b>0.7313</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- SKILLS -->
     <section id="skills">
       <div class="wrap panel reveal">
         <h2>Skills</h2>
-        <p class="hint">A quick snapshot of the tools I use across web, mobile, and software projects.</p>
+        <p class="hint">The tools I use across web, mobile, and software projects.</p>
 
         <div class="skills-grid">
-
           <!-- languages -->
           <div class="skill-block">
             <h3>Programming Languages</h3>
@@ -362,209 +414,173 @@
       </div>
     </section>
 
-
-
-
     <!-- PROJECTS -->
-    <section id="projects">
+    <section id="projects"> 
+      <div class="wrap panel reveal"> 
+        <h2>Projects</h2> <p class="hint">Projects that reflect my skills, problem-solving, and growth.</p> 
+        <div class="projFilters"> 
+          <button class="fbtn active" data-filter="all" type="button">All</button> 
+          <button class="fbtn" data-filter="completed" type="button">Completed</button> 
+          <button class="fbtn" data-filter="ongoing" type="button">Ongoing</button> 
+        </div> 
+        <div class="cards"> 
+          <div class="card" data-status="completed" onclick="toggleCard(this)"> 
+            <img src="images/spp.png" alt="Project thumbnail"/> 
+            <div class="card-top"> 
+              <h3>Student Performance Predictor</h3> 
+              <p>A Streamlit app that predicts student exam performance and gives study recommendations.</p> 
+              <span class="chev">More details ▾</span> </div> <div class="details"> 
+                <div class="details-inner"> <b>Overview:</b> This project is a predictive web app built with Streamlit and Python that estimates expected student grades based on inputs like study hours, attendance, sleep, and GPA. It combines a trained machine-learning model with contextual advice and sentiment analysis to help students understand their study habits and receive tailored feedback. <br/><br/> <b>Status:</b> Completed <br/> <b>Tech:</b> Python · Streamlit · scikit-learn · pandas · plotly · VADER/TextBlob <br/> <b>Highlights:</b> Grade prediction using ML regression, Visual study habit radar charts, Rules-based personalized advice and sentiment feedback 
+                  <div class="mini-links"> <a href="https://github.com/Oshini-Sandunika/StudentPerformancePredictor">Source Code</a> 
+                  </div> 
+                </div> 
+              </div> 
+            </div> 
+            
+          <div class="card" data-status="completed" onclick="toggleCard(this)"> 
+            <img src="images/pawfect.jpeg" alt="Project thumbnail"/> 
+            <div class="card-top"> 
+              <h3>Pawfect</h3> <p>A simple website built with HTML, CSS, and JavaScript.</p> 
+              <span class="chev">More details ▾</span> 
+            </div> 
+            <div class="details"> 
+                <div class="details-inner"> <b>Overview:</b> Pawfect is a responsive frontend project implementing a basic multi-page structure with homepage, about, and contact pages. Its clean layout and structured folder system make it a strong showcase of core frontend skills. <br/><br/> <b>Status:</b> Ongoing <br/> <b>Role:</b> Contributor (Frontend development) <br/> <b>Tech:</b> HTML · CSS · JavaScript <br/> <b>Highlights:</b> Organized multi-page layout, Clean responsive design, Basic interactive elements (e.g., forms or navigation) <div class="mini-links"> <a href="https://github.com/Oshini-Sandunika/Pawfect">Source Code</a> 
+                </div> 
+              </div> 
+            </div> 
+          </div> 
+          
+          <div class="card" data-status="completed" onclick="toggleCard(this)"> 
+            <img src="images/agronest.png" alt="Project thumbnail"/> 
+            <div class="card-top"> 
+              <h3>AgroNest – Smart Agriculture Platform</h3> <p>A team-based smart agriculture system connecting farmers with technology-driven solutions.</p> <span class="chev">More details ▾</span> 
+            </div> 
+            <div class="details"> 
+              <div class="details-inner"> <b>Overview:</b> AgroNest is a collaborative smart agriculture platform designed to support farmers through digital tools and system automation. The project focuses on improving agricultural efficiency, information access, and management using modern software practices. <br/><br/> <b>Status:</b> Completed <br/> <b>Role:</b> Contributor (Frontend + Backend development) <br/> <b>Tech:</b> MERN Stack · Team-based development <br/> <b>Highlights:</b> Real-world problem focus, collaborative Git workflow, modular feature development. <div class="mini-links"> <a href="https://github.com/AgroNest/AgroNest_1.0">Source Code</a> 
+              </div> 
+            </div> 
+            </div> 
+          </div> 
+        
+          <div class="card" data-status="ongoing" onclick="toggleCard(this)"> 
+            <img src="images/musichive.png" alt="Project thumbnail"/> 
+              <div class="card-top"> 
+                <h3>MusicHive – Music Streaming Web Application</h3> <p>A collaborative MERN-stack music streaming platform with modern UI and user features.</p> <span class="chev">More details ▾</span> 
+              </div> 
+              <div class="details"> 
+                <div class="details-inner"> <b>Overview:</b> MusicHive is an ongoing team-based music streaming web application that focuses on delivering a modern, user-friendly interface for music discovery and playback. <br/><br/> <b>Status:</b> Ongoing <br/> <b>Role:</b> Contributor (Frontend + Backend development) <br/> <b>Tech:</b> MERN Stack · GitHub collaboration <br/> <b>Highlights:</b> Modern UI design, team collaboration, scalable web application structure. <div class="mini-links"> <a href="https://github.com/Rivindu13/MusicHive">Source Code</a> 
+                </div> 
+              </div> 
+            </div> 
+          </div> 
+      
+          <div class="card" data-status="ongoing" onclick="toggleCard(this)"> 
+            <img src="images/crossrush.jpeg" alt="Project thumbnail"/> 
+            <div class="card-top"> <h3>CrossRush</h3> <p>2D arcade-style game where the player safely navigates a character across obstacles.</p> 
+              <span class="chev">More details ▾</span> 
+            </div> 
+            <div class="details"> 
+              <div class="details-inner"> <b>Overview:</b> CrossRush is a Unity game inspired by classic arcade gameplay. The player must dodge obstacles while progressing through increasingly challenging levels. Designed and developed using C# in Unity, this project demonstrates interactive game mechanics, character control, and collision handling. <br/><br/> <b>Status:</b> Ongoing <br/> <b>Tech:</b> Unity · C# · Game Design <br/> <b>Highlights:</b> Player movement & collision systems, Traffic obstacle spawning, Arcade-style scoring and challenge progression <div class="mini-links"> <a href="https://github.com/Oshini-Sandunika/CrossRush">Source Code</a> 
+              </div> 
+            </div> 
+            </div> 
+          </div> 
+    
+          <div class="card" data-status="completed" onclick="toggleCard(this)"> 
+            <img src="images/mynotes.jpeg" alt="Project thumbnail"/> 
+            <div class="card-top"> 
+              <h3>MyNotes – Personal Notes Application</h3> <p>A simple mobile application for creating, editing, and managing personal notes.</p> 
+              <span class="chev">More details ▾</span> 
+            </div> 
+            <div class="details"> 
+              <div class="details-inner"> <b>Overview:</b> MyNotes is a personal notes management application designed to help users create, edit, and organize notes efficiently. The project focuses on simplicity, usability, and clean UI structure. <br/><br/> <b>Status:</b> Completed <br/> <b>Tech:</b> Kotlin · Mobile Application Development <br/> <b>Highlights:</b> CRUD-style note handling, clean UI layout, beginner-friendly project structure. <div class="mini-links"> <a href="https://github.com/Oshini-Sandunika/MyNotes">Source Code</a> 
+              </div> 
+            </div> 
+            </div> 
+          </div> 
+  
+          <div class="card" data-status="completed" onclick="toggleCard(this)"> 
+            <img src="images/resiliaid.png" alt="Project thumbnail"/> 
+            <div class="card-top"> 
+              <h3>ResiliAid – Disaster Mental Health Support Platform</h3> <p>An AI-powered mental health support system to cope with disaster-related stress, trauma, and anxiety.</p> 
+              <span class="chev">More details ▾</span> 
+            </div> 
+            <div class="details"> 
+              <div class="details-inner"> <b>Overview:</b> ResiliAid is an intelligent mental health support platform built to assist individuals affected by natural disasters. The system combines AI-driven emotion analysis, offline-first support, and location-based alerts to provide fast, accessible, and compassionate psychological assistance. <br/><br/> <b>Status:</b> Completed <br/> <b>Tech:</b> Google AI Studio – Vibe Coded · NLP & Voice Emotion Analysis · Mobile & Web App · Offline-First Design <br/> <b>Highlights:</b> AI Mood & Crisis Detector, Kid-Friendly Support Zone, Elder Support Mode, Community Peer-Support Rooms, Location-Based Wellness Alerts, Daily Check-Ins, Psychologist Dashboard <div class="mini-links"> <a href="https://github.com/Oshini-Sandunika/ResiliAid" target="_blank">Source Code</a> 
+              </div> 
+            </div> 
+            </div> 
+          </div> 
+
+          <div class="card" data-status="completed" onclick="toggleCard(this)"> 
+            <img src="images/slidepuzzle.png" alt="Project thumbnail"/> 
+            <div class="card-top"> 
+              <h3>Slide Puzzle Game</h3> <p>A Java desktop puzzle game built using Java Swing.</p> 
+              <span class="chev">More details ▾</span> 
+            </div> 
+            <div class="details"> 
+              <div class="details-inner"> <b>Overview:</b> Slide Puzzle is a classic numbered tile puzzle game where the player rearranges shuffled tiles by moving them horizontally or vertically into an empty space. The objective is to restore the tiles to their correct numerical order using valid moves only. <br/><br/> <b>Status:</b> Completed <br/> <b>Tech:</b> Java · Java Swing · Ant (NetBeans) <br/> <b>Highlights:</b> Interactive GUI with valid tile movement, Randomized board generation on each start, Automatic win-state detection with user notification, Optional constraints: time countdown and move limit, Best-time tracking with player name, Enhanced user experience with visuals and sounds <div class="mini-links"> <a href="https://github.com/Oshini-Sandunika/SlidePuzzle.git"> Source Code </a> 
+              </div> 
+            </div> 
+            </div> 
+          </div> 
+        </div> 
+      </div> 
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog">
       <div class="wrap panel reveal">
-        <h2>Projects</h2>
-        <p class="hint">Projects that reflect my skills, problem-solving, and growth.</p>
-        <div class="projFilters">
-          <button class="fbtn active" data-filter="all" type="button">All</button>
-          <button class="fbtn" data-filter="completed" type="button">Completed</button>
-          <button class="fbtn" data-filter="ongoing" type="button">Ongoing</button>
-        </div>
+        <h2>Blog</h2>
+        <p class="hint">I share what I learn while building projects, exploring tech, and improving my skills.</p>
 
+        <div class="blog-grid">
 
-        <div class="cards">
-
-          <div class="card" data-status="completed" onclick="toggleCard(this)">
-            <img src="images/spp.png" alt="Project thumbnail"/>
-            <div class="card-top">
-              <h3>Student Performance Predictor</h3>
-              <p>A Streamlit app that predicts student exam performance and gives study recommendations.</p>
-              <span class="chev">More details ▾</span>
-            </div>
-            <div class="details">
-              <div class="details-inner">
-                <b>Overview:</b> This project is a predictive web app built with Streamlit and Python that estimates expected student grades based on inputs like study hours, attendance, sleep, and GPA. It combines a trained machine-learning model with contextual advice and sentiment analysis to help students understand their study habits and receive tailored feedback.
-                <br/><br/>
-                <b>Status:</b> Completed
-                <br/>
-                <b>Tech:</b> Python · Streamlit · scikit-learn · pandas · plotly · VADER/TextBlob
-                <br/>
-                <b>Highlights:</b> Grade prediction using ML regression, Visual study habit radar charts, Rules-based personalized advice and sentiment feedback
-                <div class="mini-links">
-                  <a href="https://github.com/Oshini-Sandunika/StudentPerformancePredictor">Source Code</a>
+          <!-- Card 1 -->
+          <a class="blogCard" href="https://medium.com/@oshinisandunika416" target="_blank" rel="noopener">
+            <img class="blogImg" src="images/medium.png" alt="Blog thumbnail">
+            <div class="blogBody">
+              <div class="blogTop">
+                <div>
+                  <div class="blogTitle">My Medium Articles</div>
+                  <div class="blogMeta">medium.com/@oshinisandunika416</div>
                 </div>
+                <span class="pill purple">Medium</span>
               </div>
-            </div>
-          </div>
-
-          <div class="card" data-status="ongoing" onclick="toggleCard(this)">
-            <img src="images/pawfect.jpeg" alt="Project thumbnail"/>
-            <div class="card-top">
-              <h3>Pawfect</h3>
-              <p>A simple website built with HTML, CSS, and JavaScript.</p>
-              <span class="chev">More details ▾</span>
-            </div>
-            <div class="details">
-              <div class="details-inner">
-                <b>Overview:</b> Pawfect is a responsive frontend project implementing a basic multi-page structure with homepage, about, and contact pages. Its clean layout and structured folder system make it a strong showcase of core frontend skills.
-                <br/><br/>
-                <b>Status:</b> Ongoing
-                <br/>
-                <b>Role:</b> Contributor (Frontend development)
-                <br/>
-                <b>Tech:</b> HTML · CSS · JavaScript
-                <br/>
-                <b>Highlights:</b> Organized multi-page layout, Clean responsive design, Basic interactive elements (e.g., forms or navigation)
-                <div class="mini-links">
-                  <a href="https://github.com/Oshini-Sandunika/Pawfect">Source Code</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card" data-status="completed" onclick="toggleCard(this)">
-            <img src="images/agronest.png" alt="Project thumbnail"/>
-            <div class="card-top">
-              <h3>AgroNest – Smart Agriculture Platform</h3>
-              <p>A team-based smart agriculture system connecting farmers with technology-driven solutions.</p>
-              <span class="chev">More details ▾</span>
-            </div>
-            <div class="details">
-              <div class="details-inner">
-                <b>Overview:</b> AgroNest is a collaborative smart agriculture platform designed to support farmers through digital tools and system automation. The project focuses on improving agricultural efficiency, information access, and management using modern software practices.
-                <br/><br/>
-                <b>Status:</b> Completed
-                <br/>
-                <b>Role:</b> Contributor (Frontend + Backend development)
-                <br/>
-                <b>Tech:</b> MERN Stack · Team-based development
-                <br/>
-                <b>Highlights:</b> Real-world problem focus, collaborative Git workflow, modular feature development.
-                <div class="mini-links">
-                  <a href="https://github.com/AgroNest/AgroNest_1.0">Source Code</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card" data-status="ongoing" onclick="toggleCard(this)">
-            <img src="images/musichive.png" alt="Project thumbnail"/>
-            <div class="card-top">
-              <h3>MusicHive – Music Streaming Web Application</h3>
-              <p>A collaborative MERN-stack music streaming platform with modern UI and user features.</p>
-              <span class="chev">More details ▾</span>
-            </div>
-            <div class="details">
-              <div class="details-inner">
-                <b>Overview:</b> MusicHive is an ongoing team-based music streaming web application that focuses on delivering a modern, user-friendly interface for music discovery and playback.
-                <br/><br/>
-                <b>Status:</b> Ongoing 
-                <br/>
-                <b>Role:</b> Contributor (Frontend + Backend development)
-                <br/>
-                <b>Tech:</b> MERN Stack · GitHub collaboration
-                <br/>
-                <b>Highlights:</b> Modern UI design, team collaboration, scalable web application structure.
-                <div class="mini-links">
-                  <a href="https://github.com/Rivindu13/MusicHive">Source Code</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card" data-status="ongoing" onclick="toggleCard(this)">
-            <img src="images/crossrush.jpeg" alt="Project thumbnail"/>
-            <div class="card-top">
-              <h3>CrossRush</h3>
-              <p>2D arcade-style game where the player safely navigates a character across obstacles.</p>
-              <span class="chev">More details ▾</span>
-            </div>
-            <div class="details">
-              <div class="details-inner">
-                <b>Overview:</b> CrossRush is a Unity game inspired by classic arcade gameplay. The player must dodge obstacles while progressing through increasingly challenging levels. Designed and developed using C# in Unity, this project demonstrates interactive game mechanics, character control, and collision handling.
-                <br/><br/>
-                <b>Status:</b> Ongoing 
-                <br/>
-                <b>Tech:</b> Unity · C# · Game Design
-                <br/>
-                <b>Highlights:</b> Player movement & collision systems, Traffic obstacle spawning, Arcade arcade-style scoring and challenge progression
-                <div class="mini-links">
-                  <a href="https://github.com/Oshini-Sandunika/CrossRush">Source Code</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card" data-status="completed" onclick="toggleCard(this)">
-            <img src="images/mynotes.jpeg" alt="Project thumbnail"/>
-            <div class="card-top">
-              <h3>MyNotes – Personal Notes Application</h3>
-              <p>A simple mobile application for creating, editing, and managing personal notes.</p>
-              <span class="chev">More details ▾</span>
-            </div>
-            <div class="details">
-              <div class="details-inner">
-                <b>Overview:</b> MyNotes is a personal notes management application designed to help users create, edit, and organize notes efficiently. The project focuses on simplicity, usability, and clean UI structure.
-                <br/><br/>
-                <b>Status:</b> Completed
-                <br/>
-                <b>Tech:</b> Kotlin · Mobile Application Development
-                <br/>
-                <b>Highlights:</b> CRUD-style note handling, clean UI layout, beginner-friendly project structure.
-                <div class="mini-links">
-                  <a href="https://github.com/Oshini-Sandunika/MyNotes">Source Code</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card" data-status="completed" onclick="toggleCard(this)">
-            <img src="images/resiliaid.png" alt="Project thumbnail"/>
-            <div class="card-top">
-              <h3>ResiliAid – Disaster Mental Health Support Platform</h3>
-              <p>
-                An AI-powered mental health support system to cope with disaster-related stress, trauma, and anxiety.
+              <p class="blogText">
+                Read my posts on development, learning experiences, and practical project work.
               </p>
-              <span class="chev">More details ▾</span>
+              <div class="blogBtn">Visit Medium</div>
             </div>
+          </a>
 
-            <div class="details">
-              <div class="details-inner">
-                <b>Overview:</b>
-                ResiliAid is an intelligent mental health support platform built to assist
-                individuals affected by natural disasters.
-                The system combines AI-driven emotion analysis, offline-first support,
-                and location-based alerts to provide fast, accessible, and compassionate
-                psychological assistance for vulnerable groups including children,
-                elders, and high-risk individuals.
-                <br/><br/>
-
-                <b>Status:</b> Completed
-                <br/>
-                <b>Tech:</b>
-                Google AI Studio – Vibe Coded · NLP & Voice Emotion Analysis ·
-                Mobile & Web App · Offline-First Design
-                <br/>
-                <b>Highlights:</b> AI Mood & Crisis Detector, Kid-Friendly Support Zone, Elder Support Mode, Community Peer-Support Rooms, 
-                Location-Based Wellness Alerts, Daily Check-Ins, Psychologist Dashboard
-                <div class="mini-links">
-                  <a href="https://github.com/Oshini-Sandunika/ResiliAid" target="_blank">
-                    Source Code
-                  </a>
+          <!-- Card 2 (Featured) -->
+          <a class="blogCard accent"
+            href="https://medium.com/@oshinisandunika416/level-up-with-pixel-using-solid-principles-in-game-design-5fd2fa9c612d"
+            target="_blank" rel="noopener">
+            <img class="blogImg" src="images/thumbnail.png" alt="Level Up with Pixel — SOLID Principles in Game Design thumbnail">
+            <div class="blogBody">
+              <div class="blogTop">
+                <div>
+                  <div class="blogTitle">Level Up with Pixel: Using SOLID Principles in Game Design</div>
+                  <div class="blogMeta">Medium • Game Design • SOLID Principles</div>
                 </div>
+                <span class="pill good">Featured</span>
               </div>
+
+              <p class="blogText">
+                A practical look at how SOLID principles can improve game design — using my character Pixel as an example to make code cleaner,
+                more maintainable, and easier to scale.
+              </p>
+
+              <div class="blogBtn">Open Article</div>
             </div>
-          </div>
+          </a>
+
 
         </div>
       </div>
     </section>
-
 
 
     <!-- CONTACT -->
@@ -593,27 +609,32 @@
       </div>
     </section>
 
-
-
-	  <!-- Footer -->
+    <!-- Footer -->
     <section id="footer">
       <footer class="wrap">
         <div class="footer-grid">
           <div>
             <p class="foot-title">Oshini Sandunika</p>
-            <p class="foot-text">
-              Undergraduate in Information Systems.<br/>
-            </p>
+            <p class="foot-text">Undergraduate in Information Systems.<br/></p>
 
             <div class="social">
               <a class="iconBtn" href="https://github.com/Oshini-Sandunika" aria-label="GitHub">
                 <svg viewBox="0 0 24 24"><path d="M9 19c-4 1.5-4-2.5-5-3m10 5v-3.5c0-1 .1-1.4-.5-2 2 0 3.5-.5 4.5-1.5 1-1 1-2.5.5-4-.2-.6-.2-1.6.1-2.5 0 0-1 0-2.5 1-.7-.2-1.6-.5-2.6-.5s-1.9.3-2.6.5c-1.5-1-2.5-1-2.5-1 .3.9.3 1.9.1 2.5-.5 1.5-.5 3 .5 4 1 1 2.5 1.5 4.5 1.5-.6.6-.5 1.2-.5 2V21"></path></svg>
               </a>
+
               <a class="iconBtn" href="https://www.linkedin.com/in/oshini-sandunika-3736bb276?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" aria-label="LinkedIn">
                 <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V9h4v2"></path><path d="M2 9h4v12H2z"></path><path d="M4 4a2 2 0 1 0 0 .01"></path></svg>
               </a>
+
               <a class="iconBtn" href="mailto:oshinisandunika416@gmail.com" aria-label="Email">
                 <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"></path><path d="M22 6l-10 7L2 6"></path></svg>
+              </a>
+
+              <!-- ✅ Medium icon -->
+              <a class="iconBtn" href="https://medium.com/@oshinisandunika416" target="_blank" rel="noopener" aria-label="Medium">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 7h5l3 7 3-7h5v10h-3V11l-2.7 6H9.7L7 11v6H4V7z"></path>
+                </svg>
               </a>
             </div>
           </div>
@@ -622,8 +643,13 @@
             <p class="foot-title">Quick Navigation</p>
             <a class="navlink" href="#home">Home</a>
             <a class="navlink" href="#about">About</a>
+            <a class="navlink" href="#education">Education</a>
             <a class="navlink" href="#skills">Skills</a>
             <a class="navlink" href="#projects">Projects</a>
+
+            <!-- ✅ Blog added to footer nav -->
+            <a class="navlink" href="#blog">Blog</a>
+
             <a class="navlink" href="#contact">Contact</a>
           </div>
 
@@ -637,6 +663,7 @@
         </div>
       </footer>
     </section>
+
   </div>
 
   <script>
@@ -652,7 +679,6 @@
       page.scrollTo({ top: el.offsetTop - topbarH, behavior: "smooth" });
     }
 
-
     for(var i=0; i<navlinks.length; i++){
       navlinks[i].onclick = function(e){
         var href = this.getAttribute("href");
@@ -665,7 +691,6 @@
       };
     }
 
-    // Mobile menu
     var menuBtn = document.getElementById("menuBtn");
     var mobileMenu = document.getElementById("mobileMenu");
     if(menuBtn){
@@ -674,7 +699,6 @@
       };
     }
 
-    // text swap
     var swap = document.getElementById("swapText");
     var words = ["clean websites", "modern interfaces", "responsive layouts", "user-friendly systems"];
     var idx = 0;
@@ -690,7 +714,6 @@
       }, 430);
     }, 2600);
 
-    // copy email
     var copyBtn = document.getElementById("copyBtn");
     var myEmail = document.getElementById("myEmail");
     var copyMsg = document.getElementById("copyMsg");
@@ -701,11 +724,17 @@
         if(navigator.clipboard){
           navigator.clipboard.writeText(email).then(function(){
             copyMsg.textContent = "Copied: " + email;
+            copyMsg.classList.add("show");
+            setTimeout(function(){ copyMsg.classList.remove("show"); }, 1800);
           }).catch(function(){
             copyMsg.textContent = "Copy failed. Copy manually: " + email;
+            copyMsg.classList.add("show");
+            setTimeout(function(){ copyMsg.classList.remove("show"); }, 2200);
           });
         }else{
           copyMsg.textContent = "Clipboard not supported. Copy manually: " + email;
+          copyMsg.classList.add("show");
+          setTimeout(function(){ copyMsg.classList.remove("show"); }, 2200);
         }
       };
     }
@@ -739,7 +768,6 @@
     reveal();
     page.addEventListener("scroll", reveal);
 
-    // Project card expand
     function toggleCard(card){
       var cards = document.getElementsByClassName("card");
       for(var i=0; i<cards.length; i++){
@@ -749,47 +777,59 @@
     }
     window.toggleCard = toggleCard;
 
-    // If URL has #hash
     if(location.hash){
       setTimeout(function(){ scrollToSection(location.hash); }, 200);
     }
 
-
     var sendBtn = document.getElementById("sendBtn");
-    var formMsg = document.getElementById("formMsg");
+  var formMsg = document.getElementById("formMsg");
 
-    if(sendBtn){
-      sendBtn.onclick = function(){
-        var name = document.getElementById("name").value.trim();
-        var email = document.getElementById("email").value.trim();
-        var msg = document.getElementById("msg").value.trim();
+  if(sendBtn){
+    sendBtn.onclick = function(){
+      var name = document.getElementById("name").value.trim();
+      var email = document.getElementById("email").value.trim();
+      var msg = document.getElementById("msg").value.trim();
 
-        if(name === "" || email === "" || msg === ""){
-          formMsg.textContent = "Please fill all fields 🙂";
-          return;
-        }
+      if(name === "" || email === "" || msg === ""){
+        formMsg.textContent = "Please fill all fields 🙂";
+        return;
+      }
 
-        emailjs.send("service_r046ghk", "template_ghxag92", {
-          from_name: name,
-          from_email: email,
-          message: msg
-        }).then(function(){
-          formMsg.textContent = "Thank you for contacting!";
-          document.getElementById("name").value = "";
-          document.getElementById("email").value = "";
-          document.getElementById("msg").value = "";
-        }, function(){
-          formMsg.textContent = "Failed to send message ❌";
-        });
-      };
-    }
+      // ✅ NEW: show sending state
+      var originalText = sendBtn.textContent;
+      sendBtn.disabled = true;
+      sendBtn.textContent = "Sending...";
+      formMsg.textContent = "Sending your message...";
 
-    // Project Filters
+      emailjs.send("service_r046ghk", "template_ghxag92", {
+        from_name: name,
+        from_email: email,
+        message: msg
+      }).then(function(){
+        formMsg.textContent = "Thank you for contacting!";
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("msg").value = "";
+
+        // ✅ restore button
+        sendBtn.disabled = false;
+        sendBtn.textContent = originalText;
+
+      }, function(){
+        formMsg.textContent = "Failed to send message ❌";
+
+        // ✅ restore button
+        sendBtn.disabled = false;
+        sendBtn.textContent = originalText;
+      });
+    };
+  }
+
     var filterBtns = document.querySelectorAll(".projFilters .fbtn");
     var projectCards = document.querySelectorAll("#projects .card");
 
     function applyFilter(filter){
-      projectCards.forEach(function(card){ //close opened cards
+      projectCards.forEach(function(card){
         card.classList.remove("open");
         var status = (card.getAttribute("data-status") || "").toLowerCase();
 
@@ -810,50 +850,46 @@
     });
 
     (function(){
-    const loader = document.getElementById("loader");
-    if(!loader) return;
+      const loader = document.getElementById("loader");
+      if(!loader) return;
 
-    const pctEl = document.getElementById("ringPct");
-    const prog = loader.querySelector(".ringProg");
-    const ring = loader.querySelector(".ring");
-    const circumference = 289;
+      const pctEl = document.getElementById("ringPct");
+      const prog = loader.querySelector(".ringProg");
+      const ring = loader.querySelector(".ring");
+      const circumference = 289;
 
-    let current = 0;
-    const target = 92;
-    const minShowTime = 650; 
-    const startTime = Date.now();
+      let current = 0;
+      const target = 92;
+      const minShowTime = 650;
+      const startTime = Date.now();
 
-    const timer = setInterval(() => {
-      current += (current < 70) ? 3 : 1;
-      if(current > target) current = target;
+      const timer = setInterval(() => {
+        current += (current < 70) ? 3 : 1;
+        if(current > target) current = target;
 
-      pctEl.textContent = current + "%";
-      prog.style.strokeDashoffset =
-        circumference * (1 - current / 100);
+        pctEl.textContent = current + "%";
+        prog.style.strokeDashoffset = circumference * (1 - current / 100);
+        ring.setAttribute("aria-valuenow", current);
+      }, 60);
 
-      ring.setAttribute("aria-valuenow", current);
-    }, 60);
-
-    window.addEventListener("load", () => {
-      const elapsed = Date.now() - startTime;
-      const remaining = Math.max(0, minShowTime - elapsed);
-
-      setTimeout(() => {
-        clearInterval(timer);
-
-        // finish to 100%
-        pctEl.textContent = "100%";
-        prog.style.strokeDashoffset = "0";
-        ring.setAttribute("aria-valuenow", "100");
+      window.addEventListener("load", () => {
+        const elapsed = Date.now() - startTime;
+        const remaining = Math.max(0, minShowTime - elapsed);
 
         setTimeout(() => {
-          loader.classList.add("hide");
-          setTimeout(() => loader.remove(), 420);
-        }, 200);
+          clearInterval(timer);
+          pctEl.textContent = "100%";
+          prog.style.strokeDashoffset = "0";
+          ring.setAttribute("aria-valuenow", "100");
 
-      }, remaining);
-    });
-  })();
+          setTimeout(() => {
+            loader.classList.add("hide");
+            setTimeout(() => loader.remove(), 420);
+          }, 200);
+
+        }, remaining);
+      });
+    })();
   </script>
 
   <script type="application/ld+json">
@@ -864,7 +900,8 @@
       "url": "https://oshini-sandunika.github.io/portfolio-oshini",
       "sameAs": [
         "https://github.com/Oshini-Sandunika",
-        "https://www.linkedin.com/in/oshini-sandunika-3736bb276"
+        "https://www.linkedin.com/in/oshini-sandunika-3736bb276",
+        "https://medium.com/@oshinisandunika416"
       ],
       "jobTitle": "Information Systems Undergraduate",
       "affiliation": {
@@ -872,7 +909,7 @@
         "name": "University of Sri Jayewardenepura"
       }
     }
-</script>
+  </script>
 
 </body>
 </html>
